@@ -1,0 +1,41 @@
+apply plugin: 'idea'
+apply plugin: 'java'
+
+group 'com.pandoaspen'
+version '1.0'
+
+sourceCompatibility = 1.8
+tasks.withType(Jar) {
+    destinationDir = file("C:/Users/Jack/Desktop/snapcraft dev/servers/zombiev/plugins")
+}
+
+jar {
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+
+    maven { url 'https://papermc.io/repo/repository/maven-public/' }
+    maven { url "https://repo.aikar.co/content/groups/aikar/" }
+}
+
+dependencies {
+    // Lombok
+    compileOnly 'org.projectlombok:lombok:1.18.8'
+    annotationProcessor 'org.projectlombok:lombok:1.18.8'
+
+    compileOnly files('libs/patched_1.16.4.jar')
+    compileOnly files('libs/ProtocolLib.jar')
+
+    compile "co.aikar:acf-paper:0.5.0-SNAPSHOT"
+
+    compile 'org.joml:joml-jdk8:1.9.11'
+    testCompile 'org.joml:joml-jdk8:1.9.11'
+
+    compile group: 'cz.advel.jbullet', name: 'jbullet', version: '20101010-1'
+
+}
