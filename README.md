@@ -4,11 +4,9 @@ A basic experimental physics engine implementation inside minecraft, using the b
 
 This allows for real time physics in minecraft with reasonable performance by uses pre-generated and optimized meshes representing the world. Working with a pre-generated mesh allows for much faster collision detection, at the cost of being static. This could be overcome with some clever partial mesh regeneration, but would only be applicable for specific usages (such as heavily driven gamemodes)
 
-Example of it in use: 
-(First a basic example, and then generating 220 cubes with a restitution (bounciness) greater than 100% )
+Examples of it in use: 
 
-
-https://user-images.githubusercontent.com/8020221/165645782-9db7e5c1-e529-4077-a884-9d6331a301ef.mp4
+https://user-images.githubusercontent.com/8020221/165651049-77ff3efe-f185-469b-87b4-cc167d5932f9.mp4
 
 
 Wall falling over
